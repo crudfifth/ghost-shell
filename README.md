@@ -130,3 +130,54 @@ GhostShellは、**高速・拡張性・ハッカー風デザイン** を実現�
 
 この技術スタックに変更や追加が必要な場合は、適宜アップデートする。
 
+# GhostShell - ディレクトリ構成
+
+GhostShellは、**モジュール化された設計** を採用し、拡張性と保守性を重視したディレクトリ構成を採用する。
+
+\`\`\`
+GhostShell/
+│── src/               # コアソースコード
+│   │── main.rs        # エントリーポイント
+│   │── app.rs         # アプリケーション管理
+│   │── ui.rs          # TUIのレンダリング
+│   │── input.rs       # キーバインド・イベント処理
+│   │── system/        # システムモニター機能
+│   │   │── mod.rs
+│   │   │── cpu.rs
+│   │   │── memory.rs
+│   │   │── network.rs
+│   │── editor/        # テキストエディタ機能
+│   │   │── mod.rs
+│   │   │── buffer.rs
+│   │   │── commands.rs
+│   │── browser/       # TUIブラウザ機能
+│   │   │── mod.rs
+│   │   │── renderer.rs
+│   │── tiling/        # タイル型ウィンドウ管理
+│   │   │── mod.rs
+│   │   │── layout.rs
+│   │   │── workspace.rs
+│── docs/              # ドキュメント
+│   │── README.md      # プロジェクト概要
+│   │── tech_stack.md  # 技術スタック
+│   │── architecture.md # アーキテクチャ設計
+│   │── usage.md       # 使用方法
+│── assets/            # 設定ファイルやリソース
+│── config/            # 設定・環境ファイル
+│   │── settings.toml  # ユーザー設定
+│   │── keybindings.toml # キーバインド設定
+│── scripts/           # 補助スクリプト
+│   │── install.sh     # インストールスクリプト
+│   │── build.sh       # ビルドスクリプト
+│── tests/             # テストコード
+│   │── test_system.rs # システムモニターのテスト
+│   │── test_editor.rs # テキストエディタのテスト
+│   │── test_browser.rs # ブラウザ機能のテスト
+│── Cargo.toml         # Rustの依存関係
+│── README.md          # プロジェクト概要
+│── LICENSE            # ライセンス
+\`\`\`
+
+このディレクトリ構成に変更が必要な場合は適宜更新する。
+
+
